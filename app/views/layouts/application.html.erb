@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog-<%= @title%></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background: #eeeeee">
+<% if user_signed_in? %>
+  <p>
+    <strong>[<%=link_to current_user.role, edit_user_registration_path %>]</strong>,<strong><%=link_to current_user.email, edit_user_registration_path %></strong>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+  </p>
+<% else %>
+  <p>
+    <strong>You are currently not logged in.</strong>
+    <%= link_to 'Login', new_user_session_path %> or
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </p>
+<% end %>
+<%=alert%>
+<%= yield %>
+
+</body>
+</html>

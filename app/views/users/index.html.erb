@@ -1,0 +1,35 @@
+<h1>manager users</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.email %></td>
+    <td><%= user.role %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+<div >
+  <div class="apple_pagination">
+    <div clas="page_info">
+    <%= page_entries_info @users %>
+    </div>
+    <%= will_paginate @users, :container => false %>
+    </div>
+  </div>
+ <div>
