@@ -1,0 +1,18 @@
+<% @comment.each do |comment| %>
+    <p>
+        <strong>发表于 <%= time_ago_in_words(comment.created_at) %>前
+        </strong><br/>
+        <%= h(comment.body) %><br/>
+        <%= link_to 'Destroy', @comments, :method => :delete, :confirm => "Are you sure?" %>
+    </p>
+<% end %>
+<div class="apple_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @comment %>
+    </div>
+    共找到<%= @comment.total_entries %>条记录,共<%= @comment.total_pages %>页.
+    <%= will_paginate @comment, :container => false, :remote => {:update => 'comment'} %>
+</div>
+<script type="text/javascript">
+  $('.apple_pagination a').attr('data-remote', 'true'); //指定分页为ajax请求
+</script>

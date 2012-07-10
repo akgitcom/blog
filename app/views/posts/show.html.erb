@@ -16,20 +16,17 @@
 </p>
 <%=Time.now.strftime("%I:%M%p")%>
 <p><%=@post.created_at%></p>
-<p><%=@post.updated_at%></p>
+
 <p>
   <b>Tags:</b>
   <%= join_tags(@post) %>
 </p>
 <h2>Comments</h2>
-<%= render @comment %>
-<div class="apple_pagination">
-    <div clas="page_info">
-    <%= page_entries_info @comment %>
-    </div>
-    <%= will_paginate @comment, :container => false %>
-    </div>
-  </div>
+
+<div id="comments"> 
+     <%= render :partial => 'comment' %>
+</div>
+ 
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
 <%= link_to 'Edit', edit_post_path(@post) %> |

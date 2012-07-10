@@ -21,7 +21,8 @@ class PostsController < ApplicationController
     @title = @post.title
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @post }
+      #format.json { render json: @post }
+      format.js # default : index.js.erb
     end
   end
 
