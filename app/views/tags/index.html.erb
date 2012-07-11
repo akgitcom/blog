@@ -1,0 +1,31 @@
+<h1>Tags#index</h1>
+<p>Find me in app/views/tags/index.html.erb</p>
+<div class="tags">
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Post_id</th>
+    <th>Created_at</th>
+    <th>Updated_at</th>
+    <th>Del</th>
+  </tr>
+
+<% @tags.each do |tag| %>
+	<tr>
+		<td><span><%=tag.id %></span></td>
+		<td><span><%=tag.name %></span></td>
+		<td><span><%= link_to 'show', tag %></span></td>
+		<td><span><%=tag.created_at %></span></td>
+		<td><span><%=tag.updated_at %></span></td>
+		<td><span><%= link_to 'destory', tag, confirm: 'are you sure?', method: :delete%></span></td>
+	</tr>
+<% end %>
+</table>
+</div>
+<div class="apple_pagination">
+  <div clas="page_info">
+  <%= page_entries_info @posts %>
+  </div>
+  <%= will_paginate @posts, :container => false %>
+</div>

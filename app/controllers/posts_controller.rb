@@ -18,6 +18,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = @post.comments.paginate(:page => params[:page],:per_page => 1)
+    @tag = @post.tags
+    #@tag = Tag.find(:all, :conditions => ["post_id = ?", params[:id]])
+
     @title = @post.title
     respond_to do |format|
       format.html # show.html.erb
@@ -44,18 +47,25 @@ class PostsController < ApplicationController
 
   # POST /posts
   # POST /posts.json
-  def create
-    @post = Post.new(params[:post])
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render json: @post, status: :created, location: @post }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+  def create    
+    @tag = params["post"]["tags_attributes"]
+    @tags = params["post"]["tags_attributes"]["0"]["name"].split(",")
+    @tag.clear
+    @tags.each_with_index do |tag,i|
+      puts i
     end
+    #@post = Post.new(params[:post])
+
+    #@tags = params[:post][:tags_attributes]["0"][:name].split(",")
+    #respond_to do |format|
+    #  if @post.save
+    #    format.html { redirect_to @post, notice: 'Post was successfully created.' }
+    #    format.json { render json: @post, status: :created, location: @post }
+    #  else
+    #    format.html { render action: "new" }
+    #    format.json { render json: @post.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PUT /posts/1

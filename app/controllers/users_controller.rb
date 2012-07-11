@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_filter :authenticate_user!, :except => []
+  	load_and_authorize_resource
 	def index
 		#@posts = Post.all
 	    @users = User.paginate(:page => params[:page],:per_page => 2)

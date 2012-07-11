@@ -1,18 +1,24 @@
 Blog::Application.routes.draw do
+  get "tags/index"
+
   devise_for :users
 
   resources :posts
-
   get "posts/index"
   root :to => "posts#index"
+
   resources :users
   resources :posts do
     resources :comments
+    resources :tags
   end
   devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new"
   end
+
+
+  resources :tags
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

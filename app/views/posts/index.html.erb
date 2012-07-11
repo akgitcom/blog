@@ -6,9 +6,10 @@
     <th>Name</th>
     <th>Title</th>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Tags</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Destroy</th>
   </tr>
 
 <% @posts.each do |post| %>
@@ -17,6 +18,7 @@
     <td><%= post.name %></td>
     <td><%= post.title %></td>
     <td><%= truncate(strip_tags(post.content), :length => 100, :separator => ' ')%><%= truncate(h(post.content), :length => 100, :separator => ' ').size%></td>
+    <<td><%= join_tags(post) %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
@@ -26,13 +28,10 @@
 </table>
 
 <br />
-<div >
-  <div class="apple_pagination">
-    <div clas="page_info">
-    <%= page_entries_info @posts %>
-    </div>
-    <%= will_paginate @posts, :container => false %>
-    </div>
+<div class="apple_pagination">
+  <div clas="page_info">
+  <%= page_entries_info @posts %>
   </div>
- <div>
+  <%= will_paginate @posts, :container => false %>
+</div>
 <%= link_to 'New Post', new_post_path %>
