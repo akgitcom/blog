@@ -6,10 +6,27 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     #@posts = Post.all
-    @posts = Post.paginate(:page => params[:page],:per_page => 2)
+    @posts = Post.paginate( :page => params[:page],
+                            :per_page => 2
+                          )
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+    end
+  end
+
+  def wap
+    render :content_type=>"text/vnd.wap.wml", :layout=>false  
+  end
+
+  def tagsearch
+    @tags = Tag.paginate( :page => params[:page],
+                          :per_page => 2,
+                          :conditions => ["name like ?", "%#{params[:name]}%"]
+                        )
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @tags }
     end
   end
 
@@ -48,24 +65,39 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create    
-    @tag = params["post"]["tags_attributes"]
-    @tags = params["post"]["tags_attributes"]["0"]["name"].split(",")
-    @tag.clear
-    @tags.each_with_index do |tag,i|
-      puts i
-    end
-    #@post = Post.new(params[:post])
+    #@tag = params[:post][:tags_attributes]    
 
-    #@tags = params[:post][:tags_attributes]["0"][:name].split(",")
-    #respond_to do |format|
-    #  if @post.save
-    #    format.html { redirect_to @post, notice: 'Post was successfully created.' }
-    #    format.json { render json: @post, status: :created, location: @post }
-    #  else
-    #    format.html { render action: "new" }
-    #    format.json { render json: @post.errors, status: :unprocessable_entity }
-    #  end
-    #end
+    # shanghai-zhou(105703655)  10:31:32 写的另一种方法
+    # tags = ['he', 'll', 'o']
+    # @tags = tags.map do |t|
+    #    if Tag.find_by_name(t).blank?
+    #       Tag.create(:name=>t)
+    #    end
+    #    Tag.find_by_name t
+    # end
+    # @post.tags = @tags
+    # @post.save
+
+    @tagarr = params[:post][:tags_attributes]["0"][:name].split(" ")
+    @tag = {}
+    @tagarr.each_with_index do |tag,i|
+    #@tagarr.each do |tag|
+      @tag[i] = {:name => tag}
+    end
+
+    @postreset = params[:post]
+    @postreset["tags_attributes"] = @tag
+    @post = Post.new(@postreset)
+    
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render json: @post, status: :created, location: @post }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PUT /posts/1

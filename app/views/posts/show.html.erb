@@ -19,7 +19,10 @@
 
 <p>
   <b>Tags:</b>
-  <%= debug(@post.tags) %>
+  <% @tag.each do |tag|%>
+  	<%= link_to tag.name , :action => "tagsearch",:name=>tag.name%> 
+  <% end %>
+  <%= tags_list(@post.tags) %>
 </p>
 <h2>Comments</h2>
 

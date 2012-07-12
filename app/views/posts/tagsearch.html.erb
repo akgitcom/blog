@@ -1,0 +1,31 @@
+<h1>Listing tags</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+
+<% @tags.each do |tag| %>
+  <tr>
+    <td><%= link_to tag.posts.all.map(&:title), tag %></td>
+    <td><%= tag.name %></td>
+    <td><%= link_to 'Show', tag %></td>
+    <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+    <td><%= link_to 'Destroy', tag, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+<div class="apple_pagination">
+  <div clas="page_info">
+  <%= page_entries_info @tags %>
+  </div>
+  <%= will_paginate @tags, :container => false %>
+</div>
+<%= link_to 'New tag', new_tag_path %>
