@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_filter :authenticate_user!
+	load_and_authorize_resource
 	def create
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(params[:comment])

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   #http_basic_authenticate_with :name => "root", :password => "root", :except => [:index, :show]
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :tagsearch]
   load_and_authorize_resource
   # GET /posts
   # GET /posts.json
@@ -18,12 +18,21 @@ class PostsController < ApplicationController
   def wap
     render :content_type=>"text/vnd.wap.wml", :layout=>false  
   end
-
+  
   def tagsearch
+    @tagname = params[:name]
     @tags = Tag.paginate( :page => params[:page],
                           :per_page => 2,
                           :conditions => ["name like ?", "%#{params[:name]}%"]
                         )
+    @posts = []
+    @tags.each do |tag|
+      @posts = tag.posts
+    end
+    @posts.each do |post|
+      @postobj = post
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @tags }

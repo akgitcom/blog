@@ -1,9 +1,11 @@
-<h1>Listing tags</h1>
 
+<h1>Listing tags</h1>
+<h2>搜索的标签：<%= @tagname %></h2>
 <table>
   <tr>
     <th>Id</th>
-    <th>Name</th>
+    <th>Title</th>
+    <th>Tags</th>
     <th>View</th>
     <th>Edit</th>
     <th>Destroy</th>
@@ -11,9 +13,14 @@
 
 <% @tags.each do |tag| %>
   <tr>
-    <td><%= link_to tag.posts.all.map(&:title), tag %></td>
-    <td><%= tag.name %></td>
-    <td><%= link_to 'Show', tag %></td>
+    <td><%= link_to tag.posts.map(&:id)[0], tag.posts %></td>
+    <td><%= link_to tag.posts.map(&:title)[0], tag.posts %></td>
+    <td>
+      <% tag.posts.map(&:tags)[0].each do |tag| %>
+        <%= link_to tag.name, :action => "tagsearch",:name=>tag.name%> 
+      <% end %>
+    </td>
+    <td><%= link_to 'Show', tag.posts %></td>
     <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
     <td><%= link_to 'Destroy', tag, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
@@ -28,4 +35,4 @@
   </div>
   <%= will_paginate @tags, :container => false %>
 </div>
-<%= link_to 'New tag', new_tag_path %>
+<%= link_to 'New post', new_post_path %>

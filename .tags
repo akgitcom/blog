@@ -1,0 +1,179 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Ability	.\app\models\ability.rb	/^class Ability$/;"	c
+ActiveSupport	.\test\test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddRoleToUsers	.\db\migrate\20120705062048_add_role_to_users.rb	/^class AddRoleToUsers < ActiveRecord::Migration$/;"	c
+Admins	.\app\controllers\admins_controller.rb	/^class Admins::SessionsController < Devise::SessionsController$/;"	c
+Application	.\config\application.rb	/^  class Application < Rails::Application$/;"	c	class:Blog
+ApplicationController	.\app\controllers\application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	.\app\helpers\application_helper.rb	/^module ApplicationHelper$/;"	m
+Blog	.\config\application.rb	/^module Blog$/;"	m
+BrowsingTest	.\test\performance\browsing_test.rb	/^class BrowsingTest < ActionDispatch::PerformanceTest$/;"	c
+Comment	.\app\models\comment.rb	/^class Comment < ActiveRecord::Base$/;"	c
+CommentTest	.\test\unit\comment_test.rb	/^class CommentTest < ActiveSupport::TestCase$/;"	c
+CommentsController	.\app\controllers\comments_controller.rb	/^class CommentsController < ApplicationController$/;"	c
+CommentsControllerTest	.\test\functional\comments_controller_test.rb	/^class CommentsControllerTest < ActionController::TestCase$/;"	c
+CommentsHelper	.\app\helpers\comments_helper.rb	/^module CommentsHelper$/;"	m
+CommentsHelperTest	.\test\unit\helpers\comments_helper_test.rb	/^class CommentsHelperTest < ActionView::TestCase$/;"	c
+CreateComments	.\db\migrate\20120703031418_create_comments.rb	/^class CreateComments < ActiveRecord::Migration$/;"	c
+CreatePostTags	.\db\migrate\20120711012330_create_post_tags.rb	/^class CreatePostTags < ActiveRecord::Migration$/;"	c
+CreatePosts	.\db\migrate\20120703023039_create_posts.rb	/^class CreatePosts < ActiveRecord::Migration$/;"	c
+CreateTags	.\db\migrate\20120703074326_create_tags.rb	/^class CreateTags < ActiveRecord::Migration$/;"	c
+DeviseCreateUsers	.\db\migrate\20120705011843_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+HomeController	.\app\controllers\home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+HomeControllerTest	.\test\functional\home_controller_test.rb	/^class HomeControllerTest < ActionController::TestCase$/;"	c
+HomeHelper	.\app\helpers\home_helper.rb	/^module HomeHelper$/;"	m
+HomeHelperTest	.\test\unit\helpers\home_helper_test.rb	/^class HomeHelperTest < ActionView::TestCase$/;"	c
+Post	.\app\models\post.rb	/^class Post < ActiveRecord::Base$/;"	c
+PostTag	.\app\models\post_tag.rb	/^class PostTag < ActiveRecord::Base$/;"	c
+PostTagTest	.\test\unit\post_tag_test.rb	/^class PostTagTest < ActiveSupport::TestCase$/;"	c
+PostTest	.\test\unit\post_test.rb	/^class PostTest < ActiveSupport::TestCase$/;"	c
+PostsController	.\app\controllers\posts_controller.rb	/^class PostsController < ApplicationController$/;"	c
+PostsControllerTest	.\test\functional\posts_controller_test.rb	/^class PostsControllerTest < ActionController::TestCase$/;"	c
+PostsHelper	.\app\helpers\posts_helper.rb	/^module PostsHelper$/;"	m
+PostsHelperTest	.\test\unit\helpers\posts_helper_test.rb	/^class PostsHelperTest < ActionView::TestCase$/;"	c
+RemoteLinkRenderer	.\app\helpers\application_helper.rb	/^	class RemoteLinkRenderer < WillPaginate::ViewHelpers::LinkRenderer$/;"	c	class:ApplicationHelper
+Tag	.\app\models\tag.rb	/^class Tag < ActiveRecord::Base$/;"	c
+TagTest	.\test\unit\tag_test.rb	/^class TagTest < ActiveSupport::TestCase$/;"	c
+TagsController	.\app\controllers\tags_controller.rb	/^class TagsController < ApplicationController$/;"	c
+TagsControllerTest	.\test\functional\tags_controller_test.rb	/^class TagsControllerTest < ActionController::TestCase$/;"	c
+TagsHelper	.\app\helpers\tags_helper.rb	/^module TagsHelper$/;"	m
+TagsHelperTest	.\test\unit\helpers\tags_helper_test.rb	/^class TagsHelperTest < ActionView::TestCase$/;"	c
+User	.\app\models\user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserControllerControllerTest	.\test\functional\user_controller_controller_test.rb	/^class UserControllerControllerTest < ActionController::TestCase$/;"	c
+UserTest	.\test\unit\user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UsersController	.\app\controllers\users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersControllerTest	.\test\functional\users_controller_test.rb	/^class UsersControllerTest < ActionController::TestCase$/;"	c
+UsersHelper	.\app\helpers\users_helper.rb	/^module UsersHelper$/;"	m
+UsersHelperTest	.\test\unit\helpers\users_helper_test.rb	/^class UsersHelperTest < ActionView::TestCase$/;"	c
+WelcomeMail	.\app\mailers\welcome_mail.rb	/^class WelcomeMail < ActionMailer::Base$/;"	c
+WelcomeMailTest	.\test\functional\welcome_mail_test.rb	/^class WelcomeMailTest < ActionMailer::TestCase$/;"	c
+_post_tags_old_20120711	.\db\main.sql	/^CREATE TABLE "_post_tags_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" varchar(255), "tag_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	t
+_post_tags_old_20120711.created_at	.\db\main.sql	/^CREATE TABLE "_post_tags_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" varchar(255), "tag_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_post_tags_old_20120711.id	.\db\main.sql	/^CREATE TABLE "_post_tags_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" varchar(255), "tag_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_post_tags_old_20120711.post_id	.\db\main.sql	/^CREATE TABLE "_post_tags_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" varchar(255), "tag_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_post_tags_old_20120711.tag_id	.\db\main.sql	/^CREATE TABLE "_post_tags_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" varchar(255), "tag_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_post_tags_old_20120711.updated_at	.\db\main.sql	/^CREATE TABLE "_post_tags_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" varchar(255), "tag_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_tags_copy_old_20120711	.\db\main.sql	/^CREATE TABLE "_tags_copy_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	t
+_tags_copy_old_20120711.created_at	.\db\main.sql	/^CREATE TABLE "_tags_copy_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_tags_copy_old_20120711.id	.\db\main.sql	/^CREATE TABLE "_tags_copy_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_tags_copy_old_20120711.name	.\db\main.sql	/^CREATE TABLE "_tags_copy_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_tags_copy_old_20120711.post_id	.\db\main.sql	/^CREATE TABLE "_tags_copy_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_tags_copy_old_20120711.updated_at	.\db\main.sql	/^CREATE TABLE "_tags_copy_old_20120711" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+_users_old_20120706	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	t
+_users_old_20120706.created_at	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.current_sign_in_at	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.current_sign_in_ip	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.email	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.encrypted_password	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.id	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.last_sign_in_at	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.last_sign_in_ip	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.remember_created_at	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.reset_password_sent_at	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.reset_password_token	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.role	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.sign_in_count	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706.updated_at	.\db\main.sql	/^CREATE TABLE "_users_old_20120706" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" varchar(255));$/;"	F
+_users_old_20120706_1	.\db\main.sql	/^CREATE TABLE "_users_old_20120706_1" ($/;"	t
+_users_old_20120706_1.banned	.\db\main.sql	/^"banned"  REAL(1) NOT NULL DEFAULT 0$/;"	F
+_users_old_20120706_1.created_at	.\db\main.sql	/^"created_at"  datetime NOT NULL,$/;"	F
+_users_old_20120706_1.current_sign_in_at	.\db\main.sql	/^"current_sign_in_at"  datetime,$/;"	F
+_users_old_20120706_1.current_sign_in_ip	.\db\main.sql	/^"current_sign_in_ip"  varchar(255),$/;"	F
+_users_old_20120706_1.email	.\db\main.sql	/^"email"  varchar(255) NOT NULL DEFAULT '',$/;"	F
+_users_old_20120706_1.encrypted_password	.\db\main.sql	/^"encrypted_password"  varchar(255) NOT NULL DEFAULT '',$/;"	F
+_users_old_20120706_1.id	.\db\main.sql	/^"id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,$/;"	F
+_users_old_20120706_1.last_sign_in_at	.\db\main.sql	/^"last_sign_in_at"  datetime,$/;"	F
+_users_old_20120706_1.last_sign_in_ip	.\db\main.sql	/^"last_sign_in_ip"  varchar(255),$/;"	F
+_users_old_20120706_1.remember_created_at	.\db\main.sql	/^"remember_created_at"  datetime,$/;"	F
+_users_old_20120706_1.reset_password_sent_at	.\db\main.sql	/^"reset_password_sent_at"  datetime,$/;"	F
+_users_old_20120706_1.reset_password_token	.\db\main.sql	/^"reset_password_token"  varchar(255),$/;"	F
+_users_old_20120706_1.role	.\db\main.sql	/^"role"  varchar(255),$/;"	F
+_users_old_20120706_1.sign_in_count	.\db\main.sql	/^"sign_in_count"  integer DEFAULT 0,$/;"	F
+_users_old_20120706_1.updated_at	.\db\main.sql	/^"updated_at"  datetime NOT NULL,$/;"	F
+change	.\db\migrate\20120703023039_create_posts.rb	/^  def change$/;"	f	class:CreatePosts
+change	.\db\migrate\20120703031418_create_comments.rb	/^  def change$/;"	f	class:CreateComments
+change	.\db\migrate\20120703074326_create_tags.rb	/^  def change$/;"	f	class:CreateTags
+change	.\db\migrate\20120705011843_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	.\db\migrate\20120705062048_add_role_to_users.rb	/^  def change$/;"	f	class:AddRoleToUsers
+change	.\db\migrate\20120711012330_create_post_tags.rb	/^  def change$/;"	f	class:CreatePostTags
+comments	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	t
+comments.body	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+comments.commenter	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+comments.created_at	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+comments.id	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+comments.index_comments_on_post_id	.\db\main.sql	/^CREATE INDEX "main"."index_comments_on_post_id"$/;"	i
+comments.post_id	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+comments.updated_at	.\db\main.sql	/^CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+create	.\app\controllers\comments_controller.rb	/^	def create$/;"	f	class:CommentsController
+create	.\app\controllers\posts_controller.rb	/^  def create    $/;"	f	class:PostsController
+destroy	.\app\controllers\comments_controller.rb	/^	def destroy$/;"	f	class:CommentsController
+destroy	.\app\controllers\posts_controller.rb	/^  def destroy$/;"	f	class:PostsController
+edit	.\app\controllers\posts_controller.rb	/^  def edit$/;"	f	class:PostsController
+index	.\app\controllers\home_controller.rb	/^	def index$/;"	f	class:HomeController
+index	.\app\controllers\posts_controller.rb	/^  def index$/;"	f	class:PostsController
+index	.\app\controllers\tags_controller.rb	/^  def index$/;"	f	class:TagsController
+index	.\app\controllers\users_controller.rb	/^	def index$/;"	f	class:UsersController
+initialize	.\app\models\ability.rb	/^  def initialize(user)$/;"	f	class:Ability
+join_tags	.\app\helpers\posts_helper.rb	/^	def join_tags(post)$/;"	f	class:PostsHelper
+link	.\app\helpers\application_helper.rb	/^		def link(text, target, attributes = {})$/;"	f	class:ApplicationHelper.RemoteLinkRenderer
+new	.\app\controllers\posts_controller.rb	/^  def new$/;"	f	class:PostsController
+post_tags	.\db\main.sql	/^CREATE TABLE "post_tags" ($/;"	t
+post_tags.created_at	.\db\main.sql	/^"created_at"  datetime NOT NULL,$/;"	F
+post_tags.id	.\db\main.sql	/^"id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,$/;"	F
+post_tags.post_id	.\db\main.sql	/^"post_id"  varchar(255) NOT NULL,$/;"	F
+post_tags.tag_id	.\db\main.sql	/^"tag_id"  varchar(255) NOT NULL,$/;"	F
+post_tags.updated_at	.\db\main.sql	/^"updated_at"  datetime NOT NULL$/;"	F
+posts	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	t
+posts.content	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+posts.created_at	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+posts.id	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+posts.name	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+posts.title	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+posts.updated_at	.\db\main.sql	/^CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);$/;"	F
+prepare	.\app\helpers\application_helper.rb	/^	def prepare(collection, options, template)$/;"	f	class:ApplicationHelper.RemoteLinkRenderer
+schema_migrations	.\db\main.sql	/^CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);$/;"	t
+schema_migrations.unique_schema_migrations	.\db\main.sql	/^CREATE UNIQUE INDEX "main"."unique_schema_migrations"$/;"	i
+schema_migrations.version	.\db\main.sql	/^CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);$/;"	F
+show	.\app\controllers\posts_controller.rb	/^  def show$/;"	f	class:PostsController
+sqlite_sequence	.\db\main.sql	/^CREATE TABLE sqlite_sequence(name,seq);$/;"	t
+sqlite_sequence.name	.\db\main.sql	/^CREATE TABLE sqlite_sequence(name,seq);$/;"	F
+sqlite_sequence.seq	.\db\main.sql	/^CREATE TABLE sqlite_sequence(name,seq);$/;"	F
+tag_list=	.\app\helpers\posts_helper.rb	/^	def tag_list=(tags)$/;"	f	class:PostsHelper
+tags	.\db\main.sql	/^CREATE TABLE "tags" ($/;"	t
+tags.created_at	.\db\main.sql	/^"created_at"  datetime NOT NULL,$/;"	F
+tags.id	.\db\main.sql	/^"id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,$/;"	F
+tags.name	.\db\main.sql	/^"name"  varchar(255),$/;"	F
+tags.updated_at	.\db\main.sql	/^"updated_at"  datetime NOT NULL$/;"	F
+tags_list	.\app\helpers\posts_helper.rb	/^	def tags_list$/;"	f	class:PostsHelper
+tags_list	.\app\helpers\posts_helper.rb	/^	def tags_list(tag)$/;"	f	class:PostsHelper.tags_list
+tags_used	.\app\helpers\posts_helper.rb	/^	def tags_used$/;"	f	class:PostsHelper
+tags_used=	.\app\helpers\posts_helper.rb	/^	def tags_used=(list)$/;"	f	class:PostsHelper
+tagsearch	.\app\controllers\posts_controller.rb	/^  def tagsearch$/;"	f	class:PostsController
+test_homepage	.\test\performance\browsing_test.rb	/^  def test_homepage$/;"	f	class:BrowsingTest
+tp	.\app\helpers\posts_helper.rb	/^	def tp(params)$/;"	f	class:PostsHelper.tags_list.tags_list
+update	.\app\controllers\posts_controller.rb	/^  def update$/;"	f	class:PostsController
+users	.\db\main.sql	/^CREATE TABLE "users" ($/;"	t
+users.banned	.\db\main.sql	/^"banned"  INTEGER NOT NULL DEFAULT 0$/;"	F
+users.created_at	.\db\main.sql	/^"created_at"  datetime NOT NULL,$/;"	F
+users.current_sign_in_at	.\db\main.sql	/^"current_sign_in_at"  datetime,$/;"	F
+users.current_sign_in_ip	.\db\main.sql	/^"current_sign_in_ip"  varchar(255),$/;"	F
+users.email	.\db\main.sql	/^"email"  varchar(255) NOT NULL DEFAULT '',$/;"	F
+users.encrypted_password	.\db\main.sql	/^"encrypted_password"  varchar(255) NOT NULL DEFAULT '',$/;"	F
+users.id	.\db\main.sql	/^"id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,$/;"	F
+users.index_users_on_email	.\db\main.sql	/^CREATE UNIQUE INDEX "main"."index_users_on_email"$/;"	i
+users.index_users_on_reset_password_token	.\db\main.sql	/^CREATE UNIQUE INDEX "main"."index_users_on_reset_password_token"$/;"	i
+users.last_sign_in_at	.\db\main.sql	/^"last_sign_in_at"  datetime,$/;"	F
+users.last_sign_in_ip	.\db\main.sql	/^"last_sign_in_ip"  varchar(255),$/;"	F
+users.remember_created_at	.\db\main.sql	/^"remember_created_at"  datetime,$/;"	F
+users.reset_password_sent_at	.\db\main.sql	/^"reset_password_sent_at"  datetime,$/;"	F
+users.reset_password_token	.\db\main.sql	/^"reset_password_token"  varchar(255),$/;"	F
+users.role	.\db\main.sql	/^"role"  varchar(255),$/;"	F
+users.sign_in_count	.\db\main.sql	/^"sign_in_count"  integer DEFAULT 0,$/;"	F
+users.updated_at	.\db\main.sql	/^"updated_at"  datetime NOT NULL,$/;"	F
+wap	.\app\controllers\posts_controller.rb	/^  def wap$/;"	f	class:PostsController
+welcome	.\app\mailers\welcome_mail.rb	/^  def welcome$/;"	f	class:WelcomeMail

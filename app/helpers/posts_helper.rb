@@ -27,4 +27,7 @@ module PostsHelper
 	    tag.name
 	  end.join(',')
 	end
+	def tp(params)
+		tag.posts.all.map(params)
+	end
 end

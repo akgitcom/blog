@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   ROLES = %w[admin moderator author user banned]
-  #管理员 版主 作者 用户 禁止 
+  #管理员 版主 作者 普通用户 禁止 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

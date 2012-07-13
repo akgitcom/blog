@@ -1,11 +1,11 @@
 Blog::Application.routes.draw do
   get "tags/index"
 
+  
   devise_for :users
-
   match '/posts/tagsearch' => 'posts#tagsearch'
-  match '/posts/wap' => 'posts#wap'
   resources :posts
+
   get "posts/index"
   root :to => "posts#index"
 
