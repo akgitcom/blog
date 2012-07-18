@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   #http_basic_authenticate_with :name => "root", :password => "root", :except => [:index, :show]
   before_filter :authenticate_user!, :except => [:show, :index, :tagsearch]
-  load_and_authorize_resource
+  load_and_authorize_resource :except => [:show, :index, :tagsearch]
   # GET /posts
   # GET /posts.json
   def index
@@ -69,25 +69,34 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @tags = ''
+    @tagsize = @post.tags.size
+    @post.tags.each_with_index do |tag,i|
+      if i < @tagsize -1       
+        @tags += tag.name + ' '
+      else
+        @tags += tag.name
+      end
+    end
   end
 
   # POST /posts
   # POST /posts.json
-  def create    
-    #@tag = params[:post][:tags_attributes]    
+def create
+    #@tag = params[:post][:tags_attributes]
 
-    # shanghai-zhou(105703655)  10:31:32 写的另一种方法
+    # shanghai-zhou(105703655) 10:31:32 写的另一种方法
     # tags = ['he', 'll', 'o']
     # @tags = tags.map do |t|
-    #    if Tag.find_by_name(t).blank?
-    #       Tag.create(:name=>t)
-    #    end
-    #    Tag.find_by_name t
+    # if Tag.find_by_name(t).blank?
+    # Tag.create(:name=>t)
+    # end
+    # Tag.find_by_name t
     # end
     # @post.tags = @tags
     # @post.save
 
-    @tagarr = params[:post][:tags_attributes]["0"][:name].split(" ")
+    @tagarr = params[:post][:tags_attributes].split(" ")
     @tag = {}
     @tagarr.each_with_index do |tag,i|
     #@tagarr.each do |tag|
@@ -97,6 +106,7 @@ class PostsController < ApplicationController
     @postreset = params[:post]
     @postreset["tags_attributes"] = @tag
     @post = Post.new(@postreset)
+    #@post = Post.new(@postreset)
     
     respond_to do |format|
       if @post.save
@@ -113,15 +123,27 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    @tagarr = params[:post][:tags_attributes].split(" ")
+    puts @tagarr
+    @tag = {}
+    @tagarr.each_with_index do |tag,i|
+      @tag[i] = {:name =>tag}
+    end
 
+    @tagreset = params[:post]
+    @tagreset["tags_attributes"] ={}
+    @tagreset["tags_attributes"] = @tag
+    @post.tags=[]
+    #puts @tagreset
+    #render :layout => false
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+     if @post.update_attributes(@tagreset)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+     else
+       format.html { render action: "edit" }
+       format.json { render json: @post.errors, status: :unprocessable_entity }
+     end
     end
   end
 

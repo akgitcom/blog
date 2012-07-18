@@ -6,6 +6,7 @@
     <th>Name</th>
     <th>Title</th>
     <th>Content</th>
+    <th>Comments</th>
     <th>Tags</th>
     <th>View</th>
     <th>Edit</th>
@@ -16,9 +17,14 @@
   <tr>
     <td><%= post.id %></td>
     <td><%= post.name %></td>
-    <td><%= post.title %></td>
+    <td><%= link_to post.title,post%></td>
     <td><%= truncate(strip_tags(post.content), :length => 100, :separator => ' ')%><%= truncate(h(post.content), :length => 100, :separator => ' ').size%></td>
-    <<td><%= join_tags(post) %></td>
+    <td><%= post.comments.size %></td>
+    <td>
+      <% post.tags.collect do |tag| %>
+        <%= link_to tag.name, :action => 'tagsearch' ,:name => tag.name %>
+      <% end %>
+    </td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
