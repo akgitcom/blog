@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   #http_basic_authenticate_with :name => "root", :password => "root", :except => [:index, :show]
-  before_filter :authenticate_user!, :except => [:show, :index, :tagsearch]
-  load_and_authorize_resource :except => [:show, :index, :tagsearch]
+  before_filter :authenticate_user!, :except => [:show, :index, :tagsearch, :iteye]
+  load_and_authorize_resource :except => [:show, :index, :tagsearch, :iteye]
   # GET /posts
   # GET /posts.json
   def index
@@ -14,6 +14,34 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+
+  def iteye
+    # Get a Nokogiri::HTML::Document for the page we’re interested in...
+    require 'nokogiri'
+    require 'open-uri'
+    page = params['page']
+    @sarr = []
+    # for page in (1..100).to_a do
+    url = 'http://www.sosoina.com/Search_lei'+page.to_s+'.html'
+    @doc = Nokogiri::HTML(open(url), nil, "utf-8")
+    @li = {}
+    @doc.css('.sr li').each_with_index do |link,i|
+      if i>5
+        @li[i] = {:txt => link.content}
+      end
+    end
+    @liarr = []
+    @doc.css('.sr li').each do |link|
+        @liarr << link.content
+    end
+    @liarr.each_with_index do |la,i|
+      if i<6
+        @liarr.shift
+      end
+    end
+    @sarr << @liarr
+    # end
+  end 
 
   def wap
     render :content_type=>"text/vnd.wap.wml", :layout=>false  
@@ -106,7 +134,6 @@ def create
     @postreset = params[:post]
     @postreset["tags_attributes"] = @tag
     @post = Post.new(@postreset)
-    #@post = Post.new(@postreset)
     
     respond_to do |format|
       if @post.save

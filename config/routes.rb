@@ -3,7 +3,8 @@ Blog::Application.routes.draw do
 
   
   devise_for :users
-  match '/posts/tagsearch' => 'posts#tagsearch'
+  match '/posts/iteye' => 'posts#iteye'
+  match '/posts/tagsearch/params' => 'posts#tagsearch#params'
   resources :posts
 
   get "posts/index"
