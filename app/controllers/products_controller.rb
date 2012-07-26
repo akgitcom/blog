@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+	before_filter :authenticate_user!, :except => [:show, :index, :it]
+	oad_and_authorize_resource :except => [:show, :index, :it]
   # GET /products
   # GET /products.json
   def index
