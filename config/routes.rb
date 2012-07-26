@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "products/index"
+
   get "tags/index"
 
   
@@ -10,6 +12,8 @@ Blog::Application.routes.draw do
   get "posts/index"
   root :to => "posts#index"
 
+  match '/products/it' => 'products#it'
+  resources :products
   resources :users
   resources :posts do
     resources :comments

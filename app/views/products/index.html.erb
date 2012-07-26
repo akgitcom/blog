@@ -1,0 +1,62 @@
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>ProductRela</th>
+    <th>ProductName</th>
+    <th>ProductSpeci</th>
+    <th>ProductPrice</th>
+    <th>ProductCoding</th>
+    <th>ProductBrand</th>
+    <th>ProductModel</th>
+    <th>ProductSecrecy</th>
+    <th>ProductNew</th>
+    <th>ProductRecommended</th>
+    <th>ProductAudit</th>
+    <th>ProductClick</th>
+    <th>ProductAgree</th>
+    <th>Producthisagree</th>
+    <th>ProductSort</th>
+    <th>ProductPublished</th>
+    <th>ProductTime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.id %></td>
+    <td><%= product.ProductRela %></td>
+    <td><%= product.ProductName %></td>
+    <td><%= product.ProductSpeci %></td>
+    <td><%= product.ProductPrice %></td>
+    <td><%= product.ProductCoding %></td>
+    <td><%= product.ProductBrand %></td>
+    <td><%= product.ProductModel %></td>
+    <td><%= product.ProductSecrecy %></td>
+    <td><%= product.ProductNew %></td>
+    <td><%= product.ProductRecommended %></td>
+    <td><%= product.ProductAudit %></td>
+    <td><%= product.ProductClick %></td>
+    <td><%= product.ProductAgree %></td>
+    <td><%= product.ProductDisagree %></td>
+    <td><%= product.ProductSort %></td>
+    <td><%= product.ProductPublished %></td>
+    <td><%= product.ProductTime %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div class="apple_pagination">
+  <div clas="page_info">
+  <%= page_entries_info @posts %>
+  </div>
+  <%= will_paginate @posts, :container => false %>
+</div>
+<%= link_to 'New Product', new_product_path %>

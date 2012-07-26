@@ -13,25 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120711012330) do
 
-  create_table "_users_old_20120706", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "role"
-  end
-
-# Could not dump table "_users_old_20120706_1" because of following StandardError
-#   Unknown type 'REAL(1)' for column 'banned'
-
   create_table "comments", :force => true do |t|
     t.string   "commenter"
     t.text     "body"
@@ -57,6 +38,34 @@ ActiveRecord::Schema.define(:version => 20120711012330) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "products", :primary_key => "ID", :force => true do |t|
+    t.integer  "ProductLang",        :limit => 1,          :default => 1
+    t.text     "ProductRela"
+    t.text     "ProductName"
+    t.text     "ProductNameColor"
+    t.text     "ProductBrand"
+    t.text     "ProductModel"
+    t.text     "ProductCoding"
+    t.text     "ProductSpeci"
+    t.text     "ProductColor"
+    t.text     "ProductPrice"
+    t.text     "ProductKeyWord"
+    t.text     "ProductPhoto1"
+    t.text     "ProductPhoto2"
+    t.text     "ProductSummary"
+    t.text     "ProductContent",     :limit => 2147483647
+    t.integer  "ProductSecrecy",     :limit => 1,          :default => 0
+    t.integer  "ProductNew",         :limit => 1,          :default => 0
+    t.integer  "ProductRecommended", :limit => 1,          :default => 0
+    t.integer  "ProductAudit",       :limit => 1,          :default => 1
+    t.integer  "ProductClick",                             :default => 0
+    t.integer  "ProductAgree",                             :default => 0
+    t.integer  "ProductDisagree",                          :default => 0
+    t.integer  "ProductSort",                              :default => 0
+    t.text     "ProductPublished"
+    t.datetime "ProductTime"
+  end
+
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.integer  "post_id"
@@ -80,7 +89,6 @@ ActiveRecord::Schema.define(:version => 20120711012330) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "role"
-    t.integer  "banned",                 :default => 0,  :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -22,12 +22,26 @@ class PostsController < ApplicationController
     page = params['page']
     @sarr = []
     # for page in (1..100).to_a do
-    url = 'http://www.sosoina.com/Search_lei'+page.to_s+'.html'
+    url = 'http://www.sosoina.com/Search_1_page'+page.to_s+'.html'
     @doc = Nokogiri::HTML(open(url), nil, "utf-8")
     @li = {}
-    @doc.css('.sr li').each_with_index do |link,i|
+    @content = []
+    @doc.css('.sr li a').each_with_index do |link,i|
       if i>5
-        @li[i] = {:txt => link.content}
+
+        @li[i] = {:txt => link[:href]}
+
+        @doc.css('.sr li').each do |ar|
+          @li[i].store(:tag,ar.content)
+        end
+
+        @doccontent = Nokogiri::HTML(open('http://www.sosoina.com/' + link[:href]), nil, "utf-8")
+        
+        @doccontent.css('.text_1').each do |c|
+          @content << c.content
+          @li[i].store(:content,c.content)
+          puts @content
+        end
       end
     end
     @liarr = []
@@ -40,9 +54,12 @@ class PostsController < ApplicationController
       end
     end
     @sarr << @liarr
-    # end
+    @li.each_with_index do |value,i|
+      if i>5
+        @li[i].store(:key,@sarr[i].in_groups_of(6))
+      end
+    end
   end 
-
   def wap
     render :content_type=>"text/vnd.wap.wml", :layout=>false  
   end

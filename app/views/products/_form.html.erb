@@ -1,0 +1,84 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :ProductLang %><br />
+    <%= f.text_field :ProductLang %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductRela %><br />
+    <%= f.text_field :ProductRela %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductName %><br />
+    <%= f.text_field :ProductName %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductNameColor %><br />
+    <%= f.text_field :ProductNameColor %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductBrand %><br />
+    <%= f.text_field :ProductBrand %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductModel %><br />
+    <%= f.text_field :ProductModel %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :ProductCoding %><br />
+    <%= f.text_field :ProductCoding %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductSpeci %><br />
+    <%= f.text_field :ProductSpeci %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductColor %><br />
+    <%= f.text_field :ProductColor %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductPrice %><br />
+    <%= f.text_field :ProductPrice %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductKeyWord %><br />
+    <%= f.text_field :ProductKeyWord %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :ProductPhoto1 %><br />
+    <%= f.text_field :ProductPhoto1 %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductPhoto2 %><br />
+    <%= f.text_field :ProductPhoto2 %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductSummary %><br />
+    <%= f.text_field :ProductSummary %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductContent %><br />
+    <%= f.text_area :ProductContent %>
+  </div>
+  <div class="field">
+    <%= f.label :ProductSecrecy %><br />
+    <%= f.text_field :ProductSecrecy %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
