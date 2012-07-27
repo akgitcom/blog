@@ -14,12 +14,15 @@
     <th>ProductNew</th>
     <th>ProductRecommended</th>
     <th>ProductAudit</th>
+    <th>ProductKeyWord</th>
+    <th>ProductSummary</th>
+    <th>ProductContent</th>
     <th>ProductClick</th>
     <th>ProductAgree</th>
     <th>Producthisagree</th>
     <th>ProductSort</th>
     <th>ProductPublished</th>
-    <th>ProductTime</th>
+    <th style="width:200px;">ProductTime</th>
     <th></th>
     <th></th>
     <th></th>
@@ -39,12 +42,15 @@
     <td><%= product.ProductNew %></td>
     <td><%= product.ProductRecommended %></td>
     <td><%= product.ProductAudit %></td>
+    <td><%= product.ProductKeyWord %></td>
+    <td><%= product.ProductSummary %></td>
+    <td><%= product.ProductContent %></td>
     <td><%= product.ProductClick %></td>
     <td><%= product.ProductAgree %></td>
     <td><%= product.ProductDisagree %></td>
     <td><%= product.ProductSort %></td>
     <td><%= product.ProductPublished %></td>
-    <td><%= product.ProductTime %></td>
+    <td style="width:200px;"><%= product.ProductTime.to_s(:short) %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>

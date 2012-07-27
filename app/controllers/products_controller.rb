@@ -1,13 +1,14 @@
+# encoding: utf-8
 class ProductsController < ApplicationController
-	before_filter :authenticate_user!, :except => [:show, :index, :it]
-	oad_and_authorize_resource :except => [:show, :index, :it]
+  before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource :except => [:show, :index]
   # GET /products
   # GET /products.json
   def index
     #@products = Product.all
     @products = Product.paginate( :page => params[:page],
-                            :per_page => 15
-                          )
+                                  :per_page => 40
+                                )
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -123,9 +124,13 @@ class ProductsController < ApplicationController
     		:ProductCoding => @sarr[0][i][3],
     		:ProductBrand => @sarr[0][i][4],
     		:ProductModel => @sarr[0][i][5],
+        :ProductKeyWord => @sarr[0][i][0],
+        :ProductSummary => '产品名称：'+ @sarr[0][i][0]+ '品牌：'+@sarr[0][i][5]+ '轴承类型：'+@sarr[0][i][4]+
+'内径：'+@sarr[0][i][2]+ '外径：'+@sarr[0][i][2]+ '厚度：'+@sarr[0][i][3]+"广州粤轴贸易有限公司专业销售世界顶级品牌进口轴承,详细数据、库存数量和价格,请致电粤轴公司",
+        :ProductContent => "广州粤轴贸易有限公司专业销售世界顶级品牌进口轴承,详细数据、库存数量和价格,请致电粤轴公司",
     		:ProductSecrecy => 0,
     		:ProductNew => 1, 
-    		:ProductRecommended => 1, 
+    		:ProductRecommended => 0, 
     		:ProductAudit => 1, 
     		:ProductClick => 1, 
     		:ProductAgree => 0, 

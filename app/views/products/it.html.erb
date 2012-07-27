@@ -1,3 +1,27 @@
-
-<%= @sarr %>
-<%= @postreset %>
+<script type="text/javascript">
+function getdata(i)
+{
+	if (i<51) 
+	{
+		$.ajax({
+			async: true,
+			url: 'http://localhost:3000/products/it?page='+i,
+			success: function(data) 
+			{					
+				$('.result').append("<li>成功获取第"+i+"页数据</li>");
+				i++;
+				getdata(i);
+			}
+		});
+		$("#loading").ajaxStart(function(){
+		   $(this).show();
+		  }).ajaxStop(function(){//ajaxStop改为ajaxComplete也是一样的
+		   $(this).hide();
+		  });
+		
+	}
+}
+getdata(2);
+</script>
+<div id="loading">loading...</div>
+<div class="result"></div>
