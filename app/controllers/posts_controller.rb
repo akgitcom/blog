@@ -141,7 +141,7 @@ def create
     # @post.tags = @tags
     # @post.save
 
-    @tagarr = params[:post][:tags_attributes].split(" ")
+    @tagarr = params[:post][:tags_attributes]["0"][:name].split(" ")
     @tag = {}
     @tagarr.each_with_index do |tag,i|
     #@tagarr.each do |tag|
@@ -167,7 +167,7 @@ def create
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-    @tagarr = params[:post][:tags_attributes].split(" ")
+    @tagarr = params[:post]["tags_attributes"]["0"][:name].split(" ")
     puts @tagarr
     @tag = {}
     @tagarr.each_with_index do |tag,i|

@@ -94,7 +94,7 @@ class ProductsController < ApplicationController
     @sarr = []
     # for page in (1..100).to_a do
     # Search_1_page1.html
-    url = 'http://www.sosoina.com/Search_1_page'+page.to_s+'.html'
+    url = 'http://www.sosoina.com/Search_8_page'+page.to_s+'.html'
     @doc = Nokogiri::HTML(open(url), nil, "utf-8")
     @li = {}
     @doc.css('.sr li').each_with_index do |link,i|
@@ -117,15 +117,16 @@ class ProductsController < ApplicationController
 	# Product.create([{ :ProductRela => '000399|000401' }, { :ProductRela => '000399|000402' }])
     @sarr[0].each_with_index do |value,i|
     	@postreset << {
-    		:ProductRela => '000399|000401',
+    		:ProductRela => '000399|000418',
     		:ProductName => @sarr[0][i][0],
     		:ProductSpeci => @sarr[0][i][1],
     		:ProductPrice => @sarr[0][i][2],
     		:ProductCoding => @sarr[0][i][3],
-    		:ProductBrand => @sarr[0][i][4],
+    		# :ProductBrand => @sarr[0][i][4],
+        :ProductBrand => '推力滚子轴承',
     		:ProductModel => @sarr[0][i][5],
         :ProductKeyWord => @sarr[0][i][0],
-        :ProductSummary => '产品名称：'+ @sarr[0][i][0]+ '品牌：'+@sarr[0][i][5]+ '轴承类型：'+@sarr[0][i][4]+
+        :ProductSummary => '产品名称：'+ @sarr[0][i][0]+ '品牌：'+@sarr[0][i][5]+ '轴承类型：'+'推力滚子轴承'+
 '内径：'+@sarr[0][i][2]+ '外径：'+@sarr[0][i][2]+ '厚度：'+@sarr[0][i][3]+"广州粤轴贸易有限公司专业销售世界顶级品牌进口轴承,详细数据、库存数量和价格,请致电粤轴公司",
         :ProductContent => "广州粤轴贸易有限公司专业销售世界顶级品牌进口轴承,详细数据、库存数量和价格,请致电粤轴公司",
     		:ProductSecrecy => 0,
