@@ -13,7 +13,7 @@
 
 <% @tags.each do |tag| %>
   <tr>
-    <td><%= link_to tag.posts.map(&:id)[0], tag.posts %></td>
+    <td><%= link_to tag.posts.map(&:id), tag.posts %></td>
     <td><%= link_to tag.posts.map(&:title)[0], tag.posts %></td>
     <td>
       <% tag.posts.map(&:tags)[0].each do |tag| %>

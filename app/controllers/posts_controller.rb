@@ -54,11 +54,11 @@ class PostsController < ApplicationController
       end
     end
     @sarr << @liarr
-    @li.each_with_index do |value,i|
-      if i>5
-        @li[i].store(:key,@sarr[i].in_groups_of(6))
-      end
-    end
+    # @li.each_with_index do |value,i|
+    #   if i>5
+    #     @li[i].store(:key,@sarr[i].in_groups_of(6))
+    #   end
+    # end
   end 
   def wap
     render :content_type=>"text/vnd.wap.wml", :layout=>false  

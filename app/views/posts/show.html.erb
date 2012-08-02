@@ -10,10 +10,10 @@
   <%= @post.title %>
 </p>
 
-<p>
   <b>Content:</b>
-  <%= simple_format(@post.content) %>
-</p>
+  <div id="content">
+  <%= raw(@post.content) %>
+</div>
 <%=Time.now.strftime("%I:%M%p")%>
 <p><%=@post.created_at%></p>
 

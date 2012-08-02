@@ -20,8 +20,8 @@
     <%= post_form.text_field :title %>
   </div>
   <div class="field">
-    <%= post_form.label :content %><br />
-    <%= post_form.text_area :content %>
+    <%= post_form.label :content %>
+    <%= kindeditor_tag 'post[content]', @post.content, :width => 800, :height => 300 %>
   </div>
   <h2>Tags</h2>
   <%= render :partial => 'tags/form',

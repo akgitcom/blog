@@ -32,6 +32,9 @@ GEM
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.0)
     cancan (1.6.8)
+    carrierwave (0.6.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -59,6 +62,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
+    mini_magick (3.4)
+      subexec (~> 0.2.1)
     multi_json (1.0.4)
     mysql2 (0.3.11-x86-mingw32)
     nokogiri (1.5.5-x86-mingw32)
@@ -79,6 +84,9 @@ GEM
       activesupport (= 3.2.1)
       bundler (~> 1.0)
       railties (= 3.2.1)
+    rails_kindeditor (0.3.4)
+      carrierwave
+      mini_magick
     railties (3.2.1)
       actionpack (= 3.2.1)
       activesupport (= 3.2.1)
@@ -99,6 +107,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5-x86-mingw32)
+    subexec (0.2.2)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -123,6 +132,7 @@ DEPENDENCIES
   mysql2
   nokogiri
   rails (= 3.2.1)
+  rails_kindeditor (~> 0.3.0)
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
